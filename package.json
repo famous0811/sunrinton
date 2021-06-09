@@ -1,0 +1,108 @@
+{
+  "name": "react-typescript-boilerplate",
+  "version": "3.2.1",
+  "main": "index.tsx",
+  "author": "HADMARINE",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npm run tailwind:css && cross-env react-app-rewired start",
+    "build": "npm run tailwind:css && cross-env GENERATE_SOURCEMAP=false react-app-rewired build",
+    "test": "npm run tailwind:css && npx jest --config ./jest.config.js --watch",
+    "test-auto": "npm run tailwind:css && npx jest --config ./jest.config.js --forceExit",
+    "eject": "react-scripts eject",
+    "lint": "eslint -c .eslintrc.js --ext .ts ./src",
+    "enc:env": "openssl aes-256-cbc -e -in .env -out .env.pub -md md5 -k $PROGRAM_ENV_SECRET_KEY",
+    "dec:env": "openssl aes-256-cbc -d -in .env.pub -out .env -md md5 -k $PROGRAM_ENV_SECRET_KEY",
+    "dec:env-m": "openssl aes-256-cbc -d -in .env.pub -out .env -md md5 -k",
+    "tailwind:css": "tailwind build src/styles/tailwind.src.css -c tailwind.config.js -o src/styles/tailwind.min.css"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^8.2.0",
+    "eqb-request-client": "^0.2.0",
+    "immutable": "^4.0.0-rc.12",
+    "mobx": "^6.1.5",
+    "mobx-react": "^7.1.0",
+    "mobx-state-tree": "^5.0.1",
+    "node-sass": "^5.0.0",
+    "postcss": "^8.2.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.2",
+    "require-strip-json-comments": "^2.0.0",
+    "styled-components": "^5.2.1",
+    "tailwindcss": "^2.0.3",
+    "typescript": "^4.2.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-proposal-decorators": "^7.13.5",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.12.13",
+    "@testing-library/jest-dom": "^5.11.8",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.7.3",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.25",
+    "@types/node-sass": "^4.11.0",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "@types/react-redux": "^7.1.7",
+    "@types/react-router": "^5.1.9",
+    "@types/react-router-dom": "^5.1.3",
+    "@types/styled-components": "^5.1.7",
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^4.15.2",
+    "@typescript-eslint/parser": "^2.20.0",
+    "core-decorators": "^0.20.0",
+    "customize-cra": "^1.0.0",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-jest": "^24.1.5",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "26.6.0",
+    "prettier": "^2.2.1",
+    "react-app-rewire-alias": "^1.0.0",
+    "react-app-rewired": "^2.1.8",
+    "react-test-renderer": "^17.0.1",
+    "ts-jest": "^26.5.2"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ],
+      [
+        "@babel/plugin-proposal-class-properties",
+        {
+          "loose": true
+        }
+      ]
+    ]
+  }
+}

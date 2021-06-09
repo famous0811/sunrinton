@@ -1,0 +1,9 @@
+{
+  "short_name": "React-Tyepscript-Boilerplate",
+  "name": "Web app developed by react-typescript-boilerplate",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
